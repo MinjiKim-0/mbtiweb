@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    html {
+      text-align: center;
+    }
+    #oneques {
+      margin: 30px 0px;
+    }
+  </style>
+</head>
+<body>
+  <form action="/result" method="GET">
+    {% for i in range(0,40,2)%}
+    <div id="oneques">
+        <div>
+          <input type="radio" id="{{id[i]}}" name="{{name[i//2]}}" value="{{id[i]}}" required />
+          <label for="{{id[i]}}">{{content[i]}}</label>
+        <div/>
+        <div>
+          <input type="radio" id="{{id[i+1]}}" name="{{name[i//2]}}" value="{{id[i+1]}}" required/>
+          <label for="{{id[i+1]}}">{{content[i+1]}}</label>
+        </div>
+      </div>
+      {% endfor %}
+      <div>
+        <input type="submit" value="결과 보기">
+        <!-- <button onclick="location.href='/result'" type="submit">
+          Submit form
+        </button> -->
+      </div>
+    </form>
+  </body>
+</html>
